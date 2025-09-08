@@ -21,6 +21,7 @@
     -- Customizing Error Message
 
 ### Steps: 
+
     -- Set headers using Middleware.
     -- Prepend the Middleware to the API routes. 
 
@@ -38,9 +39,28 @@
     -- Managing eager loading
     -- Creating a nested data in one single response. 
     -- Using different resources in different resources. 
+
 ### Side Notes: 
     --  everytime need to create a new models usel this artisan command
     --  `php artisan make:model Product -mf`
     --  this will include migration, model, factory
         --- Migration -> Models -> Factory -> DatabaseSeeder -> `php artisan migrate:fresh --seed`
-    --  Once Controller are created always create a API resouce for the controller.  
+    --  Once Controller are created always create a API resouce for the controller.
+    -- Eager loaded to prevent N+1 query problems. 
+
+## [05] Web Client with VUE.js
+### Definition: 
+    -- Testing out the real-world use case when consuming the API that we just created. 
+
+### Objective: 
+    -- To create a web client to test the API. 
+    -- Using axios and vue.js
+    
+
+## [02] Data Pagination via API
+### Definition:
+    
+
+### Objective 
+    -- Understanding pagination metadata in API response
+    -- using laravel vue pagination package for front-end implementation.
