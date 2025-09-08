@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\api\CategoryController;
+use App\Http\Controllers\Api\ProductController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -12,3 +13,5 @@ Route::get('/user', function (Request $request) {
 Route::get('categories', [CategoryController::class, 'index']);
 Route::get('categories/{category}', [categoryController::class, 'show']);
 Route::get('lists/categories', [CategoryController::class, 'list']);
+
+Route::get('products', [ProductController::class, 'index']);

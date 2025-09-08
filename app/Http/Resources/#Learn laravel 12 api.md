@@ -8,6 +8,7 @@
 - Objective: 
     -- To displayed only selected field to the user from your own Eloquent Models
     -- Eloquent Resources provide more granular and robust control over the JSON serialization of your models and their relationships
+    -- We can use API Resources to hide or modify fields
 
 
 ## Why 404 page? setting correct headers 
@@ -27,4 +28,19 @@
     -- Middleware not just for preventing for something to happens. We can add something to that request and pass that to the next request.
     -- This is a bad error message: "No query results for model [App\\Models\\Category] 13". 
     -- 
-    
+
+## List inside of List: Multi-level data
+### Definition: 
+    -- Creating a nested data? 
+
+### Objective: 
+    -- Using API resources other API resource
+    -- Managing eager loading
+    -- Creating a nested data in one single response. 
+    -- Using different resources in different resources. 
+### Side Notes: 
+    --  everytime need to create a new models usel this artisan command
+    --  `php artisan make:model Product -mf`
+    --  this will include migration, model, factory
+        --- Migration -> Models -> Factory -> DatabaseSeeder -> `php artisan migrate:fresh --seed`
+    --  Once Controller are created always create a API resouce for the controller.  
