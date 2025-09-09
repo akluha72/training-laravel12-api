@@ -73,3 +73,14 @@
 ### Useful Links:
     - https://http.cat/
     - https://httpstatuses.io/
+
+
+## [08] Validation, Erros and status codes
+### Definition: 
+### Objectives: 
+    - To make sure that the user that make a POST request to our API endpoint are authN and authN
+    - To add some rules that on the Backend side to filter/sanitize the data that will be submitted into our database. 
+### Steps:
+    - php artisan make:request StoreCategoryRequest
+    - public function store(StoreCategoryRequest $request) 
+

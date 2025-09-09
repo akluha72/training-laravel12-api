@@ -24,6 +24,7 @@ class CategoryResource extends JsonResource
 
                 return $this->description;
             }),
+            'photo' => $this->photo
         ];
     }
 }
