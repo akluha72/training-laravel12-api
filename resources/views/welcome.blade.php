@@ -21,8 +21,8 @@
     </head>
     <body class="antialiased">
         <div id="app">
+            <create-category></create-category>
             <home></home>
         </div>
-
     </body>
 </html>

@@ -1,15 +1,15 @@
-console.log("create vue component.");
-
 import './bootstrap';
 import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router'; // <-- you missed this
 import Home from './components/Home.vue';
-import { Bootstrap4Pagination } from 'laravel-vue-pagination';
-import { Bootstrap5Pagination } from 'laravel-vue-pagination';
+import CreateCategory from './components/CreateCategory.vue';
 import { TailwindPagination } from 'laravel-vue-pagination';
 
+const app = createApp({});
 
+// register components globally
+app.component('Home', Home);
+app.component('CreateCategory', CreateCategory);
+app.component("TailwindPagination", TailwindPagination);
 
-// createApp(Home).mount('#app');
-const app = createApp(Home);
-app.component("TailwindPagination", TailwindPagination); // 👈 force register
-app.mount("#app");
+app.mount('#app');

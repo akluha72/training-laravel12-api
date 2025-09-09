@@ -57,7 +57,7 @@
     -- Using axios and vue.js
     
 
-## [02] Data Pagination via API
+## [06] Data Pagination via API
 ### Definition:
     -- In non API ways, the way we would do this is. we use pagination() in controllers. and links() in the blade. 
 
@@ -69,3 +69,7 @@
     -- using laravel vue pagination package for front-end implementation.
     -- how to consume pagination data in the front-end. 
 
+## [07] Create a new record: POST from HTML form
+### Useful Links:
+    - https://http.cat/
+    - https://httpstatuses.io/

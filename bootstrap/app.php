@@ -22,4 +22,13 @@ return Application::configure(basePath: dirname(__DIR__))
                 return response()->json(['message' => 'Object not found'], 404);
             }
         });
+
+        // $exceptions->renderable(function (Throwable $e, Request $request) {
+        //     if ($request->wantsJson()) {
+        //         return response()->json([
+        //             'message' => 'Something went wrong on our server. Please try again later.'
+        //         ], 500);
+        //     }
+        // });
+
     })->create();
