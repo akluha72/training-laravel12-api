@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <TailwindPagination :data="products" @pagination-change-page="getProducts"  class="mt-8 mb-8 flex justify-center w-full"/>
+  <TailwindPagination :data="products" @pagination-change-page="getProducts" class="mt-8 mb-8 flex justify-center w-full"/>
   <!-- <Bootstrap5Pagination :data="products" @pagination-change-page="getProducts" /> -->
 </template>
 
