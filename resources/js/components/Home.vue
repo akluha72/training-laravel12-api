@@ -1,18 +1,35 @@
 <template>
-  <div class="p-4">
-    <h1 class="text-2xl font-bold">Vue is working 🎉</h1>
-    <p v-if="categories.length">Loaded {{ categories.length }} categories.</p>
+  <div>
+    <h1>Vue is working 🎉</h1>
   </div>
 </template>
 
 <script setup>
 import { onMounted, ref } from "vue";
-import axios from "axios";
 
-const categories = ref([]);
-const products = ref([]);
+const categories = ref({});
+const products = ref({});
+
+const getCategories = async () => {
+  await axios
+    .get("/api/categories")
+    .then((response) => {
+      categories.value = response.data;
+    })
+    .catch((error) => console.log(error));
+};
+
+const getProducts = async () => {
+  await axios
+    .get("/api/products")
+    .then((response) => {
+      products.value = response.data.data;
+    })
+    .catch((error) => console.log(error));
+};
 
 onMounted(() => {
-  console.log("✅ Home.vue mounted!"); // You should now see this in the browser console
+  getCategories();
+  getProducts();
 });
 </script>
