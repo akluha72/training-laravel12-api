@@ -59,8 +59,13 @@
 
 ## [02] Data Pagination via API
 ### Definition:
-    
+    -- In non API ways, the way we would do this is. we use pagination() in controllers. and links() in the blade. 
+
+    -- But when we use API. The consumer might not use laravel right? 
+    -- So when we use "API resources" and "pagination()" then it will give a somekind of meta data of the entire response body structure that the non-laravel consumer can use to create a pagination. 
 
 ### Objective 
     -- Understanding pagination metadata in API response
     -- using laravel vue pagination package for front-end implementation.
+    -- how to consume pagination data in the front-end. 
+

@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import vue from '@vitejs/plugin-vue';
-import path from 'path';
+import { defineConfig } from 'vite'
+import laravel from 'laravel-vite-plugin'
+import vue from '@vitejs/plugin-vue'
+import path from 'path'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
     plugins: [
@@ -10,6 +11,7 @@ export default defineConfig({
             refresh: true,
         }),
         vue(),
+        tailwindcss(),
     ],
     resolve: {
         alias: {
@@ -17,4 +19,4 @@ export default defineConfig({
             '@': path.resolve(__dirname, 'resources/js'),
         },
     },
-});
+})
