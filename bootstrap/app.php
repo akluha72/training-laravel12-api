@@ -22,7 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // $middleware->statefulApi()->withThrottledApi(); ;
         $middleware
             ->statefulApi()
-            ->withThrottledApi();
+            ->throttleApi();
         $middleware->prepend(\App\Http\Middleware\AlwaysAcceptJson::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
