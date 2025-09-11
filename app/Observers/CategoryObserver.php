@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Category;
+use Illuminate\Support\Facades\Cache;
 
 class CategoryObserver
 {
@@ -11,7 +12,7 @@ class CategoryObserver
      */
     public function created(Category $category): void
     {
-        //
+        Cache::forget('categories');
     }
 
     /**

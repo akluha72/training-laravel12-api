@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * @group Categories
@@ -30,7 +31,11 @@ class CategoryController extends Controller
     {
         // return Category::all();
         abort_if(!auth()->user()->tokenCan('categories-list'), 403);
-        return CategoryResource::collection(Category::all());
+        // return CategoryResource::collection(Category::all());
+
+        return CategoryResource::collection(Cache::rememberForever('categories', function () {
+            return Category::all();
+        }));
     }
 
     public function show(Category $category)
