@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\v1;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -11,8 +11,21 @@ use App\Http\Requests\StoreCategoryRequest;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Str;
 
+/**
+ * @group Categories
+ *
+ * Managing Categories
+ */
+
 class CategoryController extends Controller
 {
+    /**
+     * Get Categories
+     *
+     * Getting the list of the categories, so to create a description for each request write it on top of the function? really?!
+     * 
+     * @queryParam page Which page to show. Example: 12
+     */
     public function index()
     {
         // return Category::all();
@@ -31,6 +44,12 @@ class CategoryController extends Controller
         return CategoryResource::collection(Category::all());
     }
 
+
+    /**
+     * POST categories
+     *
+     * @bodyParam name string required Name of the category. Example: "Clothing
+     */
     public function store(StoreCategoryRequest $request)
     {
         $data = $request->all();

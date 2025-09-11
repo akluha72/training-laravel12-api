@@ -1,13 +1,17 @@
-name: Endpoints
-description: ''
+name: Products
+description: |-
+
+  Managing Products
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/user
+    uri: api/products
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: Products
+      groupDescription: |-
+
+        Managing Products
       subgroup: ''
       subgroupDescription: ''
       title: ''

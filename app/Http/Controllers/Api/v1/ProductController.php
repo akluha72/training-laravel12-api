@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 
+/**
+ * @group Products
+ *
+ * Managing Products
+ */
 class ProductController extends Controller
 {
     public function index()
