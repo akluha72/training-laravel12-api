@@ -19,9 +19,11 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->statefulApi();
+        // $middleware->statefulApi()->withThrottledApi(); ;
+        $middleware
+            ->statefulApi()
+            ->withThrottledApi();
         $middleware->prepend(\App\Http\Middleware\AlwaysAcceptJson::class);
-        $middleware->statefulApi();
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->renderable(function (NotFoundHttpException $e, Request $request) {

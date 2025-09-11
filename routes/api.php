@@ -19,5 +19,6 @@ Route::get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('categories', CategoryController::class)->middleware('auth:sanctum');
 
-    Route::get('products', [ProductController::class, 'index']);
+    Route::get('products', [ProductController::class, 'index'])
+        ->middleware('throttle:products');
 });
