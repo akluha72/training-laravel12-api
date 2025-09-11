@@ -12,7 +12,11 @@
     </div>
   </div>
 
-  <TailwindPagination :data="products" @pagination-change-page="getProducts" class="mt-8 mb-8 flex justify-center w-full"/>
+  <TailwindPagination
+    :data="products"
+    @pagination-change-page="getProducts"
+    class="mt-8 mb-8 flex justify-center w-full"
+  />
   <!-- <Bootstrap5Pagination :data="products" @pagination-change-page="getProducts" /> -->
 </template>
 
@@ -24,6 +28,10 @@ import { TailwindPagination } from "laravel-vue-pagination";
 
 const categories = ref({});
 const products = ref({});
+const user = ref(false);
+
+const email = ref("");
+const password = ref("");
 
 const getCategories = async () => {
   try {
@@ -41,6 +49,23 @@ const getProducts = async (page = 1) => {
   } catch (error) {
     console.error(error);
   }
+};
+
+const login = async () => {
+  await axios.get("/sanctum/csrf-cookie").then((response) => {
+    axios
+      .post("/login", {
+        emil: email.value,
+        password: password.value,
+      })
+
+      .then((response) => {
+        user.value = true;
+        getCategories();
+        getProdcuts();
+      })
+      .catch((error) => console.log(error));
+  });
 };
 
 onMounted(() => {
